@@ -1,0 +1,8 @@
+
+
+
+-farmer __repr__ description needs to be able to determin if there is more than one seed. change "seed" to "seeds"
+
+-If farmer name has more than one space in between first and last name, spaces not trimmed
+
+-buyseeds() needs to be able to add a sublist to self.seeds and then in future purchases add the number to the corresponding sublist
