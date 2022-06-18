@@ -1,8 +1,20 @@
 
+TO-DO:
 
-
--farmer __repr__ description needs to be able to determin if there is more than one seed. change "seed" to "seeds"
+-farmer __repr__ description needs to be able to determine if there is more than one seed. Change "seed" to "seeds"
 
 -If farmer name has more than one space in between first and last name, spaces not trimmed
+
+-plantseeds needs to be able to print out the planting design on a for loop and fill the total owned acreage based on how many crops of a kind are able to be planted per acre
+
+-set random chance for seeds to restock the shop when the crops are sold
+
+-create a general store to buy sell  seeds and crops
+
+-make random number generator to determine if crops grow. chance for crops grow well. otherwise chance for drought, locust, or natural disaster(100% loss)
+
+-add a goal. maybe trying to grow the biggest of a certain crop for a fair???
+
+DONE:
 
 -buyseeds() needs to be able to add a sublist to self.seeds and then in future purchases add the number to the corresponding sublist
