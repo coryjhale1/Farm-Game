@@ -1,5 +1,6 @@
 import os
 import time
+import random
 
 
 class Farmer:
@@ -61,7 +62,7 @@ class Farmer:
                 
             else:
                 first_buy = int(input("Congrats! This is your first piece of land. Land costs $20/acre. You have ${money}. How much would you like to purchase? ".format(money = self.money)))
-                land_cost = first_buy * 15
+                land_cost = first_buy * 20
                 if (first_buy == 0):
                     print("You have not bought anything.")
                     time.sleep(2)
@@ -231,8 +232,13 @@ class Farmer:
                     else:
                         seed_count -= how_many
                         seeds.grow()
+                        print("You now have {number} {crop}".format(number = how_many, crop = self.seed[counted_seeds]))
                         time.sleep(2)
-                        return beginning()
+                        harvest = input("Time to harvest! Press any key to continue.")
+                        if harvest == "":
+                            seeds.harvest(self)
+                        else:
+                            seeds.harvest(self)
                     
 
                 # Error Message
@@ -256,13 +262,17 @@ class Seeds:
         self.stock = stock_total
         self.acre = per_acre
 
-    def grow (self):
+    def grow (self, farmer):
         i = 0
+        print("Seeds are growing!")
         while i < self.time:
-            print(str(i))
+            print(".")
             time.sleep(1)
             i += 1
-        print("CROPS")
+
+    def harvest (self, farmer):
+        rand = random.randint(0, 10) 
+       
         
 
         
@@ -334,7 +344,7 @@ def beginning():
 
         if seed_choice.lower().strip() == watermelon.name or carrot.name or lettuce.name:
             farmer.plant_seeds(globals()[seed_choice.lower().strip()])
-
+            
         else:
             print("Invalid response")
             time.sleep(2)
